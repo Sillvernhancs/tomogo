@@ -60,6 +60,8 @@ def main():
         logging.info(e)
     except KeyboardInterrupt:
         logging.info("ctrl + c:")
+        epd.clear(0xFF)
+        epd.sleep()
         epd2in13_V4.epdconfig.module_exit(cleanup=True)
         exit()
 
