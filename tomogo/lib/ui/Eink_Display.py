@@ -5,7 +5,7 @@ import logging
 import time
 import traceback
 from PIL import Image, ImageDraw, ImageFont
-from lib.waveshare_epd import epd2in13_V4
+
 
 
 # Assuming Eink_Display.py is located in the 'ui' directory
@@ -15,8 +15,14 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 # Navigate two directories up to reach the parent directory of 'lib'
 parent_dir = os.path.abspath(os.path.join(current_dir, '..', '..'))
 
+sys.path.append(parent_dir)
+
+
 # Construct the path to the 'pic' directory
-pic_dir = os.path.join(parent_dir, 'pic')
+picdir = os.path.join(parent_dir, 'pic')
+print (picdir)
+
+from lib.waveshare_epd import epd2in13_V4
 
 epd = epd2in13_V4.EPD()
 TextFont = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 40)
