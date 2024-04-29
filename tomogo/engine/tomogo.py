@@ -9,13 +9,15 @@ import traceback
 import RPi.GPIO as GPIO
 from PIL import Image, ImageDraw, ImageFont
 
-# Define the paths
-libdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'lib')
-monstersdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'monsters')
+# Get the parent directory of the current directory (engine)
+parentdir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+# Append the parent directory to sys.path
+sys.path.append(parentdir)
 
-# append paths to system path
-if os.path.exists(libdir):
-    sys.path.append(libdir)
+# Define the paths
+libdir = os.path.join(parentdir, 'lib')
+monstersdir = os.path.join(parentdir, 'monsters')
+
 # import the e ink display 
 # from waveshare_epd import epd2in13_V4
 from lib.Hardware_Config import init_gpio
@@ -33,7 +35,7 @@ from lib.ui.Eink_Display import *
 
 def main():
     logging.basicConfig(level=logging.DEBUG)
-    
+
     init_gpio()
 
     turn_on_display()
