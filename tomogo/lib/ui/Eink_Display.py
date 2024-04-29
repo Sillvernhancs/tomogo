@@ -5,7 +5,8 @@ import logging
 import time
 import traceback
 from PIL import Image, ImageDraw, ImageFont
-from waveshare_epd import epd2in13_V4
+
+from lib.waveshare_epd import epd2in13_V4
 
 picdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'pic')
 
