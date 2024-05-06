@@ -43,13 +43,25 @@ def main():
     try:
         while True:
             # Check button input
-            if GPIO.input(5) == GPIO.LOW:
+            if GPIO.input(29) == GPIO.LOW:
                 # render_tamagotchi(epd, "happy")  # Render happy Tamagotchi state
-                render_text("┗(^o^　)┓三")
+                # render_text("┗(^o^　)┓三")
+                print("Button 1 Pressed")
                 time.sleep(1)
-            elif GPIO.input(6) == GPIO.LOW:
+            elif GPIO.input(31) == GPIO.LOW:
                 # render_tamagotchi(epd, "sad")    # Render sad Tamagotchi state
-                render_text("三 ┏ ( ˘ω˘ )┛")
+                # render_text("三 ┏ ( ˘ω˘ )┛")
+                print("Button 2 Pressed")
+                time.sleep(1)
+            elif GPIO.input(33) == GPIO.LOW:
+                # render_tamagotchi(epd, "sad")    # Render sad Tamagotchi state
+                # render_text("三 ┏ ( ˘ω˘ )┛")
+                print("Button 3 Pressed")
+                time.sleep(1)
+            elif GPIO.input(37) == GPIO.LOW:
+                # render_tamagotchi(epd, "sad")    # Render sad Tamagotchi state
+                # render_text("三 ┏ ( ˘ω˘ )┛")
+                print("Button 4 Pressed")
                 time.sleep(1)
     except IOError as e:
         logging.info(e)
